@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #FF9800, #FF5722);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Form Container */
+  .container {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+  }
+  
+  /* Form Title */
+  h1 {
+    font-size: 28px;
+    color: #FF5722;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* Labels */
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Input Fields & Select Box */
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 2px solid #FF5722;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input Focus Effect */
+  input:focus, textarea:focus, select:focus {
+    border-color: #E64A19;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+  }
+  
+  /* Checkbox Group */
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .checkbox-group input {
+    width: auto;
+  }
+  
+  /* Buttons */
+  button {
+    width: 48%;
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background: #FF5722;
+  }
+  
+  .submit-btn:hover {
+    background: #E64A19;
+  }
+  
+  /* Reset Button */
+  .reset-btn {
+    background: #757575;
+  }
+  
+  .reset-btn:hover {
+    background: #616161;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

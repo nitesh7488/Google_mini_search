@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Mini Search</title>
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Google Mini Search Title -->
+    <h1 class="title">
+      <span style="color: #4285F4;">G</span>
+      <span style="color: #EA4335;">o</span>
+      <span style="color: #FBBC05;">o</span>
+      <span style="color: #4285F4;">g</span>
+      <span style="color: #34A853;">l</span>
+      <span style="color: #EA4335;">e</span>
+      <span class="mini-text"> Mini Search</span>
+    </h1>
+
+    <!-- Search Box -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search Google Mini or type a URL">
+      <button id="searchButton">Google Search</button>
+      <button id="voiceButton" class="voice-button">
+        <i class="fas fa-microphone"></i>
+      </button>
+    </div>
+
+
+
+
+    <div id="results"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="./contact.html">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nitesh-kumar-615009264/" target="_blank" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/nitesh7488" target="_blank" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/aief.fects/" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    
+      <p class="copyright">© 2025 Nitesh Kumar. All rights reserved.</p>
+    </footer>
+    
+  </div>
+  <script>
+    // Voice recognition functionality
+    const voiceButton = document.getElementById('voiceButton');
+    const searchInput = document.getElementById('searchInput');
+    
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      voiceButton.addEventListener('click', () => {
+        recognition.start();
+        voiceButton.classList.add('listening');
+      });
+
+      recognition.addEventListener('result', (event) => {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+        document.getElementById('searchButton').click();
+      });
+
+      recognition.addEventListener('end', () => {
+        voiceButton.classList.remove('listening');
+      });
+
+      recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error);
+        alert('Voice recognition failed. Please try again.');
+      });
+    } else {
+      voiceButton.style.display = 'none';
+      console.warn('Speech recognition not supported in this browser');
+    }
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
