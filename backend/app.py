@@ -7,8 +7,8 @@ CORS(app)
 
 
 # Replace with your Google Custom Search API key and CX
-API_KEY = ''  # Replace with your API key
-CX = ''  # Replace with your CX
+API_KEY = 'AIzaSyCVbK6Zvz4LSbLIHe3BDHAIjID-QYuPU34'  # Replace with your API key
+CX = 'b41d0936a52284f29'  # Replace with your CX
 
 # Root route
 @app.route('/')
