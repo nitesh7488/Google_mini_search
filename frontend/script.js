@@ -1,5 +1,5 @@
 // Set your backend base URL
-const backendURL = 'https://google-mini-backend.onrender.com';
+const backendURL = 'https://google-mini-search.onrender.com'; // ✅ Correct backend URL
 
 // Handle search functionality
 async function performSearch() {
