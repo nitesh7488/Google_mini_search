@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: flask-backend
-    env: python
-    buildCommand: "cd backend && poetry install"
-    startCommand: "cd backend && gunicorn app:app"
-
